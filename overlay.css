@@ -1,0 +1,50 @@
+.srt-ov-root {
+  position: fixed;
+  z-index: 2147483647;
+  pointer-events: none; /* 플레이어 조작을 막지 않도록 */
+  overflow: hidden;
+}
+
+.srt-ov-box {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: var(--srt-bottom, 12%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  visibility: hidden;
+}
+
+.srt-ov-line {
+  display: inline-block;
+  max-width: 100%;
+  padding: 2px 10px;
+  background: var(--srt-bg, rgba(0, 0, 0, 0.6));
+  color: #fff;
+  font: 600 var(--srt-font, 22px) / 1.35 "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  text-align: center;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  text-shadow: 0 0 3px #000, 0 0 3px #000;
+  border-radius: 4px;
+}
+
+.srt-ov-toast {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font: 13px/1.2 system-ui, sans-serif;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+video::cue {
+  font-size: 1.1em;
+  background: rgba(0, 0, 0, 0.6);
+}

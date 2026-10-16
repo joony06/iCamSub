@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "iCamSub",
+  "short_name": "iCamSub",
+  "version": "1.2.0",
+  "description": "iCampus Subtitle — 성균관대 iCampus 강의 영상 위에 자막을 띄워줍니다.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://raw.githubusercontent.com/*"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "iCamSub",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://lcms.skku.edu/*"],
+      "js": ["srt.js", "shared.js", "content.js"],
+      "css": ["overlay.css"],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_idle"
+    }
+  ]
+}
